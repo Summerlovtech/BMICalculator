@@ -37,6 +37,7 @@ class ViewController: UIViewController {
     
     @IBAction func calculateBMIAction(_ sender: Any) {
         lblResult.isHidden = false
+        lblDescriptor.isHidden = false
         //whether metric or not
         if metricSwitch.isOn == true {
             //transfer into double
@@ -54,7 +55,7 @@ class ViewController: UIViewController {
                             else if(result < 24.9) { descriptor = "Healthy weight" }
                             else if(result < 29.9) { descriptor = "Overweight" }
                             else { descriptor = "Obese" }
-                let descriptorStr = String(format: "You are:%.2f", descriptor)
+                let descriptorStr = "You are: \(descriptor)"
                 lblResult.text = resultStr
                 lblDescriptor.text = descriptorStr
                 print(result)
